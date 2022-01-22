@@ -34,4 +34,33 @@ Add the following Dependencies to the project:
 
 [ADD Picture here]
   
+Click the Generate button at the bottom of the screen. This will download a zip file containing your project boilerplate. Extract the zip file to your preferred folder location.
+
+Open Eclipse IDE and go to File and select Import. Under Maven, choose Existing Maven Projects. Click on Next.
+
+Browse the directory where you extracted the zip file, select the root folder where the pom.xml file is present. Click on Finish to import your project into your Eclipse IDE.
+
+Notice that there is a file named EmployeeApplication.java. This is the entry point that will launch the Spring Boot application.
+
+The @SpringBootApplication includes the features of the below Spring Boot annotations:
+  
+ ## Step 2: Add sub-packages to the project
+ 
+- DAO: The DAO (data access layer) 
+- Repository: This layer is similar to the DAO layer which connects to the database and accesses the data
+- Service: This layer calls the DAO layer to get the data and perform business logic on it
+- Model: The model contains all the Java objects that will be mapped to the database table using
+- Controller: REST APIs controller will process the REST API request
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
