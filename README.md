@@ -8,7 +8,7 @@
 5. Restman extension for Chrome
 6. Java 8 above
 
-# Advantage of using SpringBoot
+# Advantages of using SpringBoot
 - Fast and easy development
 - Embedded Tomcat server into application
 - No need for the deployment of war files and XML configuration
