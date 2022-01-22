@@ -1,6 +1,6 @@
 # Build up SpringBoot+RESTFul+PostgresSQL in Java 
 
-# Environment
+# Environmental Setup
 1. SpringBoot 2.5.9
 2. PostgresSQL 14
 3. Tomcat 9.0.56 embedded in SpringBoot
@@ -13,4 +13,5 @@
 - Embedded Tomcat server into application
 - No need for the deployment of war files and XML configuration
 - Easy generate dependencies in Spring Initializer
+
 
