@@ -50,20 +50,64 @@ The @SpringBootApplication includes the features of the below Spring Boot annota
 In Eclipse, right-click on the com.example.employee package and Select New then Package as seen below:
 - Repository: This layer is similar to the DAO layer which connects to the database and accesses the data
 - Service: This layer calls the DAO layer to get the data and perform business logic on it
-- Model: The model contains all the Java objects that will be mapped to the database table using
+- Model: The class contains all the Java objects that will be mapped to the database table using
 - Controller: REST APIs controller will process the REST API request
  
  [ADD Picture]
  
  
  ### Step 2.1: Add class to the project
+ 
+<div class="block-markdown">
+<div class="markdown">
+<div class="language-java">
+<pre class="twlo-code language-java">
+<code class="language-java">
+
+package com.example.employee.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "employee")
+public class Employee {
+        
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name="emp_id")
+            private Long id;
+        
+        @Column(name="first_name")
+        private String firstName;
+        
+        @Column(name="last_name")
+        private String lastName;
+        
+        @Column(name="email_id")
+        private String emailId;
+}
+</code><
+/pre>
+</div>
+</div>
+</div>
+
  ### Step 2.2: Add class to the project
  ### Step 2.3: Add class to the project
  ### Step 2.4: Add class to the project
  ### Step 2.5: Add class to the project
  
  
+ ## Step 3: Setup PostgresSQL Database
  
+  [ADD Picture]
+  
+  
  
  
  
