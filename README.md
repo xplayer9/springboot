@@ -47,15 +47,20 @@ The @SpringBootApplication includes the features of the below Spring Boot annota
  ## Step 2: Add sub-packages to the project
  
 - DAO: The DAO (data access layer) 
+In Eclipse, right-click on the com.example.employee package and Select New then Package as seen below:
 - Repository: This layer is similar to the DAO layer which connects to the database and accesses the data
 - Service: This layer calls the DAO layer to get the data and perform business logic on it
 - Model: The model contains all the Java objects that will be mapped to the database table using
 - Controller: REST APIs controller will process the REST API request
  
+ [ADD Picture]
  
  
- 
- 
+ ### Step 2.1: Add class to the project
+ ### Step 2.2: Add class to the project
+ ### Step 2.3: Add class to the project
+ ### Step 2.4: Add class to the project
+ ### Step 2.5: Add class to the project
  
  
  
