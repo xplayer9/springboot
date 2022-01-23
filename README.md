@@ -221,18 +221,19 @@ public class UserAccountController {
  
  ## Step 3: Install PostgresSQL Database
  
- [PostgresSQL Download](https://www.postgresql.org/)
+ [PostgresSQL Download](https://www.postgresql.org/) <br>
  Create your user account
  Create database, name: postgres
  Connection configuration: host:localhost, port:1234
   
   
- ## Step 4: Build Application
+## Step 4: Build Application
  
- To connect PostgresSQL, you’ll have to provide the database details to Spring Boot
- Open the "application.properties" under "src/main/resources", type following
- ```Java
- # Postgres database, account
+To connect PostgresSQL, you’ll have to provide the database details to Spring Boot
+Open the "application.properties" under "src/main/resources", type following
+
+```Java
+# Postgres database, account
 spring.datasource.url = jdbc:postgresql://localhost:1234/postgres
 spring.datasource.username  = postgres
 spring.datasource.password  = 1234
@@ -242,7 +243,7 @@ spring.datasource.password  = 1234
 spring.datasource.testWhileIdle=true
 spring.datasource.validationQuery=SELECT 1
 # ===============================
-# = JPA / HIBERNATE
+# JPA / HIBERNATE
 # ===============================
 # Show or not log for each sql query
 spring.jpa.show-sql=true
@@ -250,19 +251,15 @@ spring.jpa.show-sql=true
 # schema will be automatically created afresh for every start of application
 spring.jpa.hibernate.ddl-auto=create-drop
 
-# Naming strategy
-#spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
-#spring.jpa.hibernate.naming.physical-strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-
 # Allows Hibernate to generate SQL optimized for a particular DBMS
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
- ```
+```
  
- [ADD Details]
- 
- Right click on the employee folder in the Project Explorer on Eclipse and select Run As then choose 4 Maven build
- And Edit Configuration pop-up will open. Type spring-boot:run in Goals, Click on Apply then Run
- The application will now start building. A successful build will display the following on the console:
+Right click project on Eclipse and select "Run As" then choose "4 Maven build"
+In "main" tab, type "spring-boot:run" in Goals
+In "JRE" tab, type "-Dfork=false" in VM Arguments
+Click on Apply then Run
+
  
  [ADD Picture]
  
