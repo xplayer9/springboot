@@ -55,10 +55,7 @@ UserAccountApplication.java is the program entry point with @SpringBootApplicati
 - Controller: he class mapping to REST APIs controller for HTTP requests
  
 ### Step 2.1: Model class
-Right click "src/main/java", New -> Class
-Package: om.example.userAccount.model
-Class Name: UserAccount
- 
+Right click "src/main/java", New -> Class, Package: om.example.userAccount.model, Class Name: UserAccount
  
 ```Java
 package com.example.userAccount.model;
@@ -110,12 +107,117 @@ public class UserAccount {
 	}
 }
 ```
+Right click file, select "Source" -> "Generate getter and setter"
 
- ### Step 2.2: Add class to the project
- ### Step 2.3: Add class to the project
- ### Step 2.4: Add class to the project
- ### Step 2.5: Add class to the project
- 
+### Step 2.2: Repository class
+Right click "src/main/java", New -> Class, Package: om.example.userAccount.repository, Class Name: UserAccountRepository
+
+```Java
+package com.example.userAccount.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.example.userAccount.model.UserAccount;
+
+@Repository
+public interface UserAccountRepository extends JpaRepository<UserAccount, Long> {
+
+}
+```
+
+### Step 2.3: Service class
+Right click "src/main/java", New -> Class, Package: om.example.userAccount.service, Class Name: UserAccountService
+
+```Java
+package com.example.userAccount.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.userAccount.model.UserAccount;
+import com.example.userAccount.repository.UserAccountRepository;
+import java.util.List;
+
+@Service
+public class UserAccountService {
+
+        @Autowired
+        UserAccountRepository rep;     
+        
+        // CREATE 
+        public UserAccount createEmployee(UserAccount acct) {
+            return rep.save(acct);
+        }
+
+        // READ
+        public List<UserAccount> getEmployees() {
+            return rep.findAll();
+        }
+
+        // DELETE
+        public void deleteEmployee(Long empId) {
+            rep.deleteById(empId);
+        }
+        
+        // UPDATE
+        public UserAccount updateEmployee(Long id, UserAccount acct) {
+        	UserAccount cur = rep.findById(id).get();
+            cur.setName(acct.getName());
+            cur.setEmail(acct.getEmail());
+            return rep.save(cur);        
+        }
+}
+```
+
+### Step 2.4: Controller class
+Right click "src/main/java", New -> Class, Package: om.example.userAccount.controller, Class Name: UserAccountController
+
+```Java
+package com.example.userAccount.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.userAccount.model.UserAccount;
+import com.example.userAccount.service.UserAccountService;
+
+@RestController
+@RequestMapping("/api")
+public class UserAccountController {
+	
+        @Autowired
+        UserAccountService empService;
+        
+        @PostMapping(value="/userAccounts")
+        public UserAccount createuserAccount(@RequestBody UserAccount emp) {
+            return empService.createUserAccount(emp);
+        }
+        
+        @GetMapping(value="/userAccounts")
+        public List<UserAccount> readuserAccounts() {
+            return empService.getUserAccount();
+        }
+
+        @PutMapping(value="/userAccounts/{empId}")
+        public UserAccount readuserAccounts(@PathVariable(value = "empId") Long id, @RequestBody UserAccount empDetails) {
+            return empService.updateUserAccount(id, empDetails);
+        }
+
+        @DeleteMapping(value="/userAccounts/{empId}")
+        public void deleteuserAccounts(@PathVariable(value = "empId") Long id) {
+            empService.deleteUserAccount(id);
+        }
+}
+```
  
  ## Step 3: Setup PostgresSQL Database
  
