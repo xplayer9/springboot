@@ -17,7 +17,8 @@
 # Step-By-Step Procedures
 
 ## Step 1: Create Sprint from Spring Intializr
-Go to the Spring Initializr site. Under Project, choose “Maven” and then “Java” as the language. Note that this tutorial is built with Spring Boot version 2.5.6
+Go to the [Spring Initializer](https://start.spring.io/)
+Under Project, choose “Maven” and then “Java” as the language. Note that this tutorial is built with Spring Boot version 2.5.6
 
 Include the following identifiers under "Project Metadata" for your project:
 - Group: keep it as a default value.
@@ -32,7 +33,8 @@ Add the following Dependencies to the project:
 - Spring Data JPA: required to access the data from the database. JPA (Java Persistence API) 
 - PostgresSQL Driver: required to connect with PostgresSQL database.
 
-[ADD Picture here]
+<img width="1191" alt="Screenshot1" src="https://user-images.githubusercontent.com/48862763/150665780-bb9a8016-8266-4ad0-8105-df1913e09e68.png">
+
   
 Click the Generate button at the bottom of the screen. This will download a zip file containing your project boilerplate. Extract the zip file to your preferred folder location.
 
