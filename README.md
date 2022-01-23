@@ -47,20 +47,21 @@ UserAccountApplication.java is the program entry point with @SpringBootApplicati
 
 <img width="258" alt="Screenshot2" src="https://user-images.githubusercontent.com/48862763/150666329-fd4835b9-09f1-4ade-884f-ca5672e55f76.png">
 
- ## Step 2: Add sub-packages to the project
+## Step 2: Add sub-packages to the project
  
 - Repository: DAO(Data Access Object) layer which connects and accesses to the database
 - Service: This layer calls the DAO and perform CRUD operations
 - Model: The class mapping to the database table and provides getter and setter functions
 - Controller: he class mapping to REST APIs controller for HTTP requests
  
- [ADD Picture]
+### Step 2.1: Model class
+Right click "src/main/java", New -> Class
+Package: om.example.userAccount.model
+Class Name: UserAccount
  
- 
- ### Step 2.1: Add class to the project
  
 ```Java
-package com.example.employee.model;
+package com.example.userAccount.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -70,22 +71,43 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
-public class Employee {
-        
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name="emp_id")
-            private Long id;
-        
-        @Column(name="first_name")
-        private String firstName;
-        
-        @Column(name="last_name")
-        private String lastName;
-        
-        @Column(name="email_id")
-        private String emailId;
+@Table(name = "user")
+public class UserAccount {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="user_id")
+    private Long id;
+    
+    @Column(name="name")
+    private String name;
+    
+    @Column(name="email")
+    private String email;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
 ```
 
