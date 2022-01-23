@@ -18,33 +18,34 @@
 
 ## Step 1: Create Sprint from Spring Intializr
 Go to the [Spring Initializer](https://start.spring.io/)
-Under Project, choose “Maven” and then “Java” as the language. Note that this tutorial is built with Spring Boot version 2.5.6
 
-Include the following identifiers under "Project Metadata" for your project:
-- Group: keep it as a default value.
-- Artifact: you can provide “employee”.
-- Name: same as the artifact name, "employee".
-- Description: provide a description about the project
+In "Spring Intializr" web page, enter following info
+- Choose "Maven Project", Language "Java" and Spring Boot version "2.5.9"
+- Group: Keep default, no need to change
+- Artifact: type “userAccount”
+- Name: type “userAccount”
+- Description: type any description
+- Choose “Jar”, it will include embedded Tomcat server provided by Spring Boot
+- Choose Java SDK 11
 
-Choose “Jar” as the Packaging type as the application will run in the embedded Tomcat server provided by Spring Boot.
-
-Add the following Dependencies to the project:
-- Spring Web: required for building RESTful web applications.
+Add the following Dependencies
+- Spring Web: required for RESTful web applications.
 - Spring Data JPA: required to access the data from the database. JPA (Java Persistence API) 
 - PostgresSQL Driver: required to connect with PostgresSQL database.
 
+My Screenshot
 <img width="1191" alt="Screenshot1" src="https://user-images.githubusercontent.com/48862763/150665780-bb9a8016-8266-4ad0-8105-df1913e09e68.png">
 
-  
-Click the Generate button at the bottom of the screen. This will download a zip file containing your project boilerplate. Extract the zip file to your preferred folder location.
+Click the Generate button at the bottom of the screen, this will generate a project zip file
 
-Open Eclipse IDE and go to File and select Import. Under Maven, choose Existing Maven Projects. Click on Next.
+## Step 1.1: Create dynamic web project in Eclipse
+Next, let's extract the zip file to a local folder
+Open Eclipse IDE and go to File and select Import. Under Maven, choose Existing Maven Projects and choose the local folder you extract the zip file
+Click on Finish, then a web project will be created
 
-Browse the directory where you extracted the zip file, select the root folder where the pom.xml file is present. Click on Finish to import your project into your Eclipse IDE.
+UserAccountApplication.java is the program entry point with @SpringBootApplication annotations
+<img width="258" alt="Screenshot2" src="https://user-images.githubusercontent.com/48862763/150666329-fd4835b9-09f1-4ade-884f-ca5672e55f76.png">
 
-Notice that there is a file named EmployeeApplication.java. This is the entry point that will launch the Spring Boot application.
-
-The @SpringBootApplication includes the features of the below Spring Boot annotations:
   
  ## Step 2: Add sub-packages to the project
  
