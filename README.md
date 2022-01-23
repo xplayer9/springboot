@@ -58,12 +58,7 @@ In Eclipse, right-click on the com.example.employee package and Select New then 
  
  ### Step 2.1: Add class to the project
  
-<div class="block-markdown">
-<div class="markdown">
-<div class="language-java">
 <pre class="twlo-code language-java">
-<code class="language-java">
-
 package com.example.employee.model;
 
 import javax.persistence.Column;
@@ -91,11 +86,7 @@ public class Employee {
         @Column(name="email_id")
         private String emailId;
 }
-</code><
-/pre>
-</div>
-</div>
-</div>
+</pre>
 
  ### Step 2.2: Add class to the project
  ### Step 2.3: Add class to the project
@@ -108,8 +99,23 @@ public class Employee {
   [ADD Picture]
   
   
+ ## Step 4: Build Application
+ 
+ To connect PostgresSQL, you’ll have to provide the database details to Spring Boot
+ Open the application.properties file and add the below content
+ 
+ [ADD Details]
+ 
+ Right click on the employee folder in the Project Explorer on Eclipse and select Run As then choose 4 Maven build
+ And Edit Configuration pop-up will open. Type spring-boot:run in Goals, Click on Apply then Run
+ The application will now start building. A successful build will display the following on the console:
+ 
+ [ADD Picture]
  
  
- 
+  ## Step 5: Test Application by using RestMan
+  
+  [ADD Picture]
+  
  
  
