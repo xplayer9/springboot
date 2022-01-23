@@ -58,7 +58,7 @@ In Eclipse, right-click on the com.example.employee package and Select New then 
  
  ### Step 2.1: Add class to the project
  
-<pre class="twlo-code language-java">
+```Java
 package com.example.employee.model;
 
 import javax.persistence.Column;
@@ -86,7 +86,7 @@ public class Employee {
         @Column(name="email_id")
         private String emailId;
 }
-</pre>
+```
 
  ### Step 2.2: Add class to the project
  ### Step 2.3: Add class to the project
