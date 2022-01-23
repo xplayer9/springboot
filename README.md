@@ -44,17 +44,15 @@ Open Eclipse IDE and go to File and select Import. Under Maven, choose Existing 
 Click on Finish, then a web project will be created
 
 UserAccountApplication.java is the program entry point with @SpringBootApplication annotations
+
 <img width="258" alt="Screenshot2" src="https://user-images.githubusercontent.com/48862763/150666329-fd4835b9-09f1-4ade-884f-ca5672e55f76.png">
 
-  
  ## Step 2: Add sub-packages to the project
  
-- DAO: The DAO (data access layer) 
-In Eclipse, right-click on the com.example.employee package and Select New then Package as seen below:
-- Repository: This layer is similar to the DAO layer which connects to the database and accesses the data
-- Service: This layer calls the DAO layer to get the data and perform business logic on it
-- Model: The class contains all the Java objects that will be mapped to the database table using
-- Controller: REST APIs controller will process the REST API request
+- Repository: DAO(Data Access Object) layer which connects and accesses to the database
+- Service: This layer calls the DAO and perform CRUD operations
+- Model: The class mapping to the database table and provides getter and setter functions
+- Controller: he class mapping to REST APIs controller for HTTP requests
  
  [ADD Picture]
  
