@@ -1,6 +1,6 @@
-# SpringBoot RESTFul Web Service and PostgreSQL -- Java Project
-
-# Environmental Setup
+# Java Project
+# SpringBoot RESTFul Web Service and PostgreSQL
+## Start From Environmental Setup
 1. SpringBoot 2.5.9
 2. PostgreSQL 14
 3. Tomcat 9.0.56 embedded in SpringBoot
@@ -8,7 +8,7 @@
 5. RestMan extension in Chrome brower
 6. Java 11
 
-# Advantages of using SpringBoot
+## Advantages of using SpringBoot
 - Fast and easy development
 - Embedded Tomcat server into application
 - No need for the deployment of war files and XML configuration
@@ -287,4 +287,4 @@ RestMan is extension app for Chrome brower, install RestMan at first
 <img width="391" alt="Screenshot8" src="https://user-images.githubusercontent.com/48862763/150704784-3b0fd743-2e9b-4570-b461-23a4f9a38b2f.png">
 
 
-#### Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
+#### Same test procedures apply to "GET", "PUT" and "Delete" HTTP requests
