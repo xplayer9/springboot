@@ -1,25 +1,25 @@
-# Build up SpringBoot+RESTFul+PostgresSQL in Java 
+# SpringBoot RESTFul Web Service and PostgreSQL -- Java Project
 
 # Environmental Setup
 1. SpringBoot 2.5.9
-2. PostgresSQL 14
+2. PostgreSQL 14
 3. Tomcat 9.0.56 embedded in SpringBoot
 4. Eclipse 2021-12
-5. Restman extension for Chrome
-6. Java 8 above
+5. RestMan extension in Chrome brower
+6. Java 11
 
 # Advantages of using SpringBoot
 - Fast and easy development
 - Embedded Tomcat server into application
 - No need for the deployment of war files and XML configuration
-- Easy generate dependencies in Spring Initializer
+- Easy to inject dependencies in Spring Initializer
 
 # Step-By-Step Procedures
 
-## Step 1: Create Sprint from Spring Intializr
+## Step 1: Create Spring project from Spring Intializr
 Go to the [Spring Initializer](https://start.spring.io/)
 
-In "Spring Intializr" web page, enter following info
+In "Spring Intializer" web page, enter following info
 - Choose "Maven Project", Language "Java" and Spring Boot version "2.5.9"
 - Group: Keep default, no need to change
 - Artifact: type “userAccount”
@@ -29,25 +29,25 @@ In "Spring Intializr" web page, enter following info
 - Choose Java SDK 11
 
 Add the following Dependencies
-- Spring Web: required for RESTful web applications.
+- Spring Web: required for RESTful web applications
 - Spring Data JPA: required to access the data from the database. JPA (Java Persistence API) 
-- PostgresSQL Driver: required to connect with PostgresSQL database.
+- PostgreSQL Driver: required to connect with PostgreSQL database
 
-My Screenshot
+The Screenshot
 <img width="1191" alt="Screenshot1" src="https://user-images.githubusercontent.com/48862763/150665780-bb9a8016-8266-4ad0-8105-df1913e09e68.png">
 
-Click the Generate button at the bottom of the screen, this will generate a project zip file
+Click the "Generate" button at the bottom of the screen, this will generate a project Zip file
 
 ## Step 1.1: Create dynamic web project in Eclipse
-Next, let's extract the zip file to a local folder
-Open Eclipse IDE and go to File and select Import. Under Maven, choose Existing Maven Projects and choose the local folder you extract the zip file
-Click on Finish, then a web project will be created
+Next, let's extract the Zip file to a local folder
+Open Eclipse IDE and go to "File" and select "Import". Under Maven, choose Existing Maven Projects and choose the local folder you extract the Zip file
+Click on "Finish", then a web project was created
 
 UserAccountApplication.java is the program entry point with @SpringBootApplication annotations
 
 <img width="258" alt="Screenshot2" src="https://user-images.githubusercontent.com/48862763/150666329-fd4835b9-09f1-4ade-884f-ca5672e55f76.png">
 
-## Step 2: Add sub-packages to the project
+## Step 2: Add sub-class to the project
  
 - Repository: DAO(Data Access Object) layer which connects and accesses to the database
 - Service: This layer calls the DAO and perform CRUD operations
@@ -68,10 +68,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "`user`")   //better to use `` for table name
+@Table(name = "`user`")   //double quato is needed for table name
 public class UserAccount {
 	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="user_id")
     private Long id;
@@ -107,7 +107,7 @@ public class UserAccount {
 	}
 }
 ```
-Right click file, select "Source" -> "Generate getter and setter"
+Right click the file, select "Source" -> "Generate getter and setter"
 
 ### Step 2.2: Repository class
 Right click "src/main/java", New -> Class, Package: om.example.userAccount.repository, Class Name: UserAccountRepository
@@ -219,9 +219,9 @@ public class UserAccountController {
 }
 ```
  
- ## Step 3: Install PostgresSQL Database
+ ## Step 3: Install PostgreSQL Database
  
- [PostgresSQL Download](https://www.postgresql.org/) <br>
+ [PostgreSQL Download](https://www.postgresql.org/) <br>
  Create your user account
  Create database, name: postgres
  Connection configuration: host:localhost, port:1234
@@ -229,8 +229,7 @@ public class UserAccountController {
   
 ## Step 4: Build Application
  
-To connect PostgresSQL, you’ll have to provide the database details to Spring Boot
-Open the "application.properties" under "src/main/resources", type following
+To connect PostgreSQL, type database details in "application.properties" under "src/main/resources" as following
 
 ```Java
 # Postgres database, account
@@ -256,8 +255,8 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
  
 Right click project on Eclipse and select "Run As" then choose "4 Maven build"
-In "main" tab, type "spring-boot:run" in Goals
-In "JRE" tab, type "-Dfork=false" in VM Arguments
+In the "main" tab, type "spring-boot:run" in "Goals"
+In the "JRE" tab, type "-Dfork=false" in "VM Arguments". So, we can stop Tomcat in Eclipse
 Click on Apply then Run
 
 <img width="995" alt="Screenshot3" src="https://user-images.githubusercontent.com/48862763/150704056-63ebc893-aeda-4fc2-af7c-7e20aeed95ce.png">
@@ -276,19 +275,16 @@ RestMan is extension app for Chrome brower, install RestMan at first
 <img width="1340" alt="Screenshot5" src="https://user-images.githubusercontent.com/48862763/150705205-d1bd3b96-dd3b-40aa-8810-f319010315e5.png">
 
 
-- HTTP Link: Select "POST", type "http://localhost:8080/api/userAccounts" and run. HTTP response "200" to indicate successful response
+- HTTP Link: Select "POST", type "http://localhost:8080/api/userAccounts" and run. HTTP response "200" success code
 <img width="1355" alt="Screenshot6" src="https://user-images.githubusercontent.com/48862763/150705227-1a635591-0299-4d21-b12a-c385aa63f26e.png">
 
 
-Here is the HTTP response result
+- Here is the HTTP response result
 <img width="1350" alt="Screenshot7" src="https://user-images.githubusercontent.com/48862763/150705236-0d006fdb-a17f-4c6e-879a-4b5142b7141f.png">
 
 
-- Data inserted in PostgreSQL table
-- 
+- Data inserted in PostgreSQL table 
 <img width="391" alt="Screenshot8" src="https://user-images.githubusercontent.com/48862763/150704784-3b0fd743-2e9b-4570-b461-23a4f9a38b2f.png">
 
 
-##Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
-
-
+#### Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
