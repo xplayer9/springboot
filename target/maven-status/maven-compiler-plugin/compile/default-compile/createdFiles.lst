@@ -1,0 +1,5 @@
+com/example/userAccount/repository/UserAccountRepository.class
+com/example/userAccount/controller/UserAccountController.class
+com/example/userAccount/service/UserAccountService.class
+com/example/userAccount/UserAccountApplication.class
+com/example/userAccount/model/UserAccount.class
