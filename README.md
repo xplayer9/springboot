@@ -269,38 +269,26 @@ RestMan is extension app for Chrome brower, install RestMan at first
 ### Step 5.1: Test HTTP POST
 
 - Headers: Content-Type, application/json
-<img width="889" alt="Screenshot4" src="https://user-images.githubusercontent.com/48862763/150704478-dcadad9a-1cbc-4a0a-bf9c-c43d8b6cf1b6.png">
+<img width="881" alt="Screenshot4" src="https://user-images.githubusercontent.com/48862763/150705186-5496abd4-2719-4906-9651-69ad58670528.png">
+
 
 - Body: Select "RAW", "JSON", and type following data
-<img width="1349" alt="Screenshot5" src="https://user-images.githubusercontent.com/48862763/150704522-98bb4e03-d5ec-4446-a367-5e324dadc2c6.png">
+<img width="1340" alt="Screenshot5" src="https://user-images.githubusercontent.com/48862763/150705205-d1bd3b96-dd3b-40aa-8810-f319010315e5.png">
+
 
 - HTTP Link: Select "POST", type "http://localhost:8080/api/userAccounts" and run. HTTP response "200" to indicate successful response
-<img width="1354" alt="Screenshot6" src="https://user-images.githubusercontent.com/48862763/150704603-0da3a915-776c-4ab2-9a35-763ca0e37dfa.png">
+<img width="1355" alt="Screenshot6" src="https://user-images.githubusercontent.com/48862763/150705227-1a635591-0299-4d21-b12a-c385aa63f26e.png">
+
 
 Here is the HTTP response result
-<img width="1143" alt="Screenshot7" src="https://user-images.githubusercontent.com/48862763/150704622-3a8d1ba4-fff9-4284-8b35-b569e2f66dbc.png">
+<img width="1350" alt="Screenshot7" src="https://user-images.githubusercontent.com/48862763/150705236-0d006fdb-a17f-4c6e-879a-4b5142b7141f.png">
 
-Data inserted in PostgreSQL table
+
+- Data inserted in PostgreSQL table
+- 
 <img width="391" alt="Screenshot8" src="https://user-images.githubusercontent.com/48862763/150704784-3b0fd743-2e9b-4570-b461-23a4f9a38b2f.png">
 
 
-Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
+##Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
- 
