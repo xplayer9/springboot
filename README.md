@@ -256,7 +256,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 Right click project on Eclipse and select "Run As" then choose "4 Maven build"<br>
 In the "main" tab, type "spring-boot:run" in "Goals"<br>
 In the "JRE" tab, type "-Dfork=false" in "VM Arguments". So, we can stop Tomcat in Eclipse<br>
-Click on Apply then Run<br>
+Click on "Apply" then "Run", following is the successful console message<br>
 
 <img width="995" alt="Screenshot3" src="https://user-images.githubusercontent.com/48862763/150704056-63ebc893-aeda-4fc2-af7c-7e20aeed95ce.png">
 
