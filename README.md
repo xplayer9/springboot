@@ -220,10 +220,10 @@ public class UserAccountController {
  
  ## Step 3: Install PostgreSQL Database
  
- [PostgreSQL Download](https://www.postgresql.org/) <br>
- Create your user account
- Create database, name: postgres
- Connection configuration: host:localhost, port:1234
+ [PostgreSQL Download](https://www.postgresql.org/) and installation <br>
+ Create user account <br>
+ Create database, name: postgres <br>
+ Connection configuration: host:localhost, port:1234 <br>
   
   
 ## Step 4: Build Application
