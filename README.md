@@ -68,7 +68,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "`user`")   //better to use `` for table name
 public class UserAccount {
 	
 	@Id
@@ -260,13 +260,47 @@ In "main" tab, type "spring-boot:run" in Goals
 In "JRE" tab, type "-Dfork=false" in VM Arguments
 Click on Apply then Run
 
- 
- [ADD Picture]
- 
- 
-  ## Step 5: Test Application by using RestMan
-  
-  [ADD Picture]
+<img width="995" alt="Screenshot3" src="https://user-images.githubusercontent.com/48862763/150704056-63ebc893-aeda-4fc2-af7c-7e20aeed95ce.png">
+
+## Step 5: Test Application by RestMan
+
+RestMan is extension app for Chrome brower, install RestMan at first
+
+### Step 5.1: Test HTTP POST
+
+- Headers: Content-Type, application/json
+<img width="889" alt="Screenshot4" src="https://user-images.githubusercontent.com/48862763/150704478-dcadad9a-1cbc-4a0a-bf9c-c43d8b6cf1b6.png">
+
+- Body: Select "RAW", "JSON", and type following data
+<img width="1349" alt="Screenshot5" src="https://user-images.githubusercontent.com/48862763/150704522-98bb4e03-d5ec-4446-a367-5e324dadc2c6.png">
+
+- HTTP Link: Select "POST", type "http://localhost:8080/api/userAccounts" and run. HTTP response "200" to indicate successful response
+<img width="1354" alt="Screenshot6" src="https://user-images.githubusercontent.com/48862763/150704603-0da3a915-776c-4ab2-9a35-763ca0e37dfa.png">
+
+Here is the HTTP response result
+<img width="1143" alt="Screenshot7" src="https://user-images.githubusercontent.com/48862763/150704622-3a8d1ba4-fff9-4284-8b35-b569e2f66dbc.png">
+
+Data inserted in PostgreSQL table
+<img width="391" alt="Screenshot8" src="https://user-images.githubusercontent.com/48862763/150704784-3b0fd743-2e9b-4570-b461-23a4f9a38b2f.png">
+
+
+Same test procedures apply for "GET", "PUT" and "Delete" HTTP requests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
  
  
