@@ -39,9 +39,8 @@ The Screenshot
 Click the "Generate" button at the bottom of the screen, this will generate a project Zip file
 
 ## Step 1.1: Create dynamic web project in Eclipse
-Next, let's extract the Zip file to a local folder
-Open Eclipse IDE and go to "File" and select "Import". Under Maven, choose Existing Maven Projects and choose the local folder you extract the Zip file
-Click on "Finish", then a web project was created
+Next, let's extract the Zip file to a local folder<br>
+Open Eclipse IDE and go to "File" and select "Import". Under Maven, choose Existing Maven Projects and choose the local folder you extract the Zip file. Click on "Finish", then a web project was created
 
 UserAccountApplication.java is the program entry point with @SpringBootApplication annotations
 
@@ -254,10 +253,10 @@ spring.jpa.hibernate.ddl-auto=create-drop
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
  
-Right click project on Eclipse and select "Run As" then choose "4 Maven build"
-In the "main" tab, type "spring-boot:run" in "Goals"
-In the "JRE" tab, type "-Dfork=false" in "VM Arguments". So, we can stop Tomcat in Eclipse
-Click on Apply then Run
+Right click project on Eclipse and select "Run As" then choose "4 Maven build"<br>
+In the "main" tab, type "spring-boot:run" in "Goals"<br>
+In the "JRE" tab, type "-Dfork=false" in "VM Arguments". So, we can stop Tomcat in Eclipse<br>
+Click on Apply then Run<br>
 
 <img width="995" alt="Screenshot3" src="https://user-images.githubusercontent.com/48862763/150704056-63ebc893-aeda-4fc2-af7c-7e20aeed95ce.png">
 
