@@ -51,7 +51,7 @@ UserAccountApplication.java is the program entry point with @SpringBootApplicati
 - Repository: DAO(Data Access Object) layer which connects and accesses to the database
 - Service: This layer calls the DAO and perform CRUD operations
 - Model: The class mapping to the database table and provides getter and setter functions
-- Controller: he class mapping to REST APIs controller for HTTP requests
+- Controller: the class mapping to REST APIs controller for HTTP requests
  
 ### Step 2.1: Model class
 Right click "src/main/java", New -> Class, Package: om.example.userAccount.model, Class Name: UserAccount
